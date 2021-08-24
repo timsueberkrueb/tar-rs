@@ -1499,7 +1499,7 @@ fn copy_path_into(mut slot: &mut [u8], path: &Path, is_link_name: bool) -> io::R
             }
             // Allow "./" as the path
             (Component::CurDir, false) if path.components().count() == 1 => {}
-            (Component::CurDir, false) => continue,
+            (Component::CurDir, false) => {},
             (Component::Normal(_), _) | (_, true) => {}
         };
         if needs_slash {
